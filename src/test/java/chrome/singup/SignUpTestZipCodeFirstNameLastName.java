@@ -86,7 +86,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameShouldBeRequired() {
+    public void firstNameShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -107,7 +107,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameShouldNotContainCyrillicLetters() {
+    public void firstNameShouldNotContainCyrillicLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -128,7 +128,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameCanContainApostrophe() {
+    public void firstNameCanContainApostrophe() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -149,7 +149,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameCanContainHyphen() {
+    public void firstNameCanContainHyphen() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -169,7 +169,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameShouldNotContainSpaces() {
+    public void firstNameShouldNotContainSpaces() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -190,7 +190,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void FirstNameShouldNotContainDigits() {
+    public void firstNameShouldNotContainDigits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -211,7 +211,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void LastNameCanBeMissed() {
+    public void lastNameCanBeMissed() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -232,7 +232,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void LastNameShouldNotContainCyrillicLetters() {
+    public void lastNameShouldNotContainCyrillicLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -253,7 +253,7 @@ public class SignUpTestZipCodeFirstNameLastName {
     }
 
     @Test
-    public void LastNameCanContainApostrophe() {
+    public void lastNameCanContainApostrophe() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");

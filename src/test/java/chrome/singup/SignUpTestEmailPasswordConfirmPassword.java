@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SignUpTestEmailPasswordConfirmPassword {
     @Test
-    public void EmailShouldAcceptEmailWithDotInEmailName() {
+    public void emailShouldAcceptEmailWithDotInEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -30,7 +30,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithSomeDotsInDomain() {
+    public void emailShouldAcceptEmailWithSomeDotsInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -51,7 +51,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithoutDotsInDomain() {
+    public void emailShouldNotAcceptEmailWithoutDotsInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -72,7 +72,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithSpacesInEmailNAme() {
+    public void emailShouldNotAcceptEmailWithSpacesInEmailNAme() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -93,7 +93,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithSpacesInDomain() {
+    public void emailShouldNotAcceptEmailWithSpacesInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -114,7 +114,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithoutEmailName() {
+    public void emailShouldNotAcceptEmailWithoutEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -135,7 +135,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithoutDomain() {
+    public void emailShouldNotAcceptEmailWithoutDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -156,7 +156,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithSymbolsInEmailName() {
+    public void emailShouldAcceptEmailWithSymbolsInEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -177,7 +177,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void EmailShouldNotAcceptEmailWithSymbolAtTheEndOfDomain() {
+    public void emailShouldNotAcceptEmailWithSymbolAtTheEndOfDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -198,7 +198,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void PasswordShouldBeRequired() {
+    public void passwordShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -219,7 +219,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void ConfirmPasswordShouldBeRequired() {
+    public void confirmPasswordShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -240,7 +240,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void PasswordShouldNotAcceptFieldWith3Digits() {
+    public void passwordShouldNotAcceptFieldWith3Digits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -261,7 +261,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void PasswordShouldAcceptFieldWith20Digits() {
+    public void passwordShouldAcceptFieldWith20Digits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -282,7 +282,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void PasswordShouldAcceptFieldWithSymbols() {
+    public void passwordShouldAcceptFieldWithSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -303,7 +303,7 @@ public class SignUpTestEmailPasswordConfirmPassword {
     }
 
     @Test
-    public void RegistrationShouldNotBeWithNotEqualsPasswordAndConfirmPassword() {
+    public void registrationShouldNotBeWithNotEqualsPasswordAndConfirmPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");

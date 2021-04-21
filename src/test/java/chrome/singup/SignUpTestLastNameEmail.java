@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class SignUpTestLastNameEmail {
     @Test
-    public void LastNameCanContainHyphen() {
+    public void lastNameCanContainHyphen() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -30,7 +30,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void LastNameShouldNotContainSpaces() {
+    public void lastNameShouldNotContainSpaces() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -51,7 +51,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void LastNameShouldNotContainDigits() {
+    public void lastNameShouldNotContainDigits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -72,7 +72,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void LastNameShouldNotAcceptSymbols() {
+    public void lastNameShouldNotAcceptSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -93,7 +93,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldBeRequired() {
+    public void emailShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -115,7 +115,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldNotAcceptFieldWithoutAddressSign() {
+    public void emailShouldNotAcceptFieldWithoutAddressSign() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -137,7 +137,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailInUpperCase() {
+    public void emailShouldAcceptEmailInUpperCase() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -158,7 +158,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailInLowerCase() {
+    public void emailShouldAcceptEmailInLowerCase() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -179,7 +179,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithDigitsInEmailName() {
+    public void emailShouldAcceptEmailWithDigitsInEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -200,7 +200,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithDigitsInDomain() {
+    public void emailShouldAcceptEmailWithDigitsInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -221,7 +221,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithHyphenInEmailName() {
+    public void emailShouldAcceptEmailWithHyphenInEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -242,7 +242,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithHyphenInDomain() {
+    public void emailShouldAcceptEmailWithHyphenInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -263,7 +263,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithUnderscoreInEmailName() {
+    public void emailShouldAcceptEmailWithUnderscoreInEmailName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -284,7 +284,7 @@ public class SignUpTestLastNameEmail {
     }
 
     @Test
-    public void EmailShouldAcceptEmailWithUnderscoreInDomain() {
+    public void emailShouldAcceptEmailWithUnderscoreInDomain() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");

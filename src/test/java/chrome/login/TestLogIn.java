@@ -6,13 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-import static java.lang.Thread.sleep;
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 
 public class TestLogIn {
     @Test
-    public void LogInShouldAcceptDataFromRegistration() throws InterruptedException {
+    public void logInShouldAcceptDataFromRegistration() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -37,13 +38,13 @@ public class TestLogIn {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        sleep(1000);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String confirmLogIn = driver.getCurrentUrl();
         assertEquals(confirmLogIn, "https://www.sharelane.com/cgi-bin/main.py");
         driver.close();
     }
     @Test
-    public void InLoginEmailShouldBeRequired() {
+    public void inLoginEmailShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -73,7 +74,7 @@ public class TestLogIn {
     }
 
     @Test
-    public void InLoginPasswordShouldBeRequired() {
+    public void inLoginPasswordShouldBeRequired() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -103,7 +104,7 @@ public class TestLogIn {
     }
 
     @Test
-    public void InLoginEmailShouldBeRegisteredInSystem() {
+    public void inLoginEmailShouldBeRegisteredInSystem() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -133,7 +134,7 @@ public class TestLogIn {
     }
 
     @Test
-    public void InLoginForEmailCanNotBeUsedWrongPassword() {
+    public void inLoginForEmailCanNotBeUsedWrongPassword() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -163,7 +164,7 @@ public class TestLogIn {
     }
 
     @Test
-    public void CanNotLogInWithEmailAndPasswordThatAreNotRegisteredInSystem() {
+    public void canNotLogInWithEmailAndPasswordThatAreNotRegisteredInSystem() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -190,7 +191,7 @@ public class TestLogIn {
         driver.close();
     }
     @Test
-    public void LogInShouldNotAcceptEmailAndPasswordViceVersa() {
+    public void logInShouldNotAcceptEmailAndPasswordViceVersa() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
