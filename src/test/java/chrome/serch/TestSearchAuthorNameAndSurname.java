@@ -290,4 +290,18 @@ public class TestSearchAuthorNameAndSurname {
         assertTrue(testResult, "Search doesn't work");
         driver.close();
     }
+    @Test
+    public void searchShouldNotAcceptByAuthorThatDoesNotExistInData() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver(options);
+        driver.get("https://www.sharelane.com/cgi-bin/main.py");
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Tolstoy");
+        driver.findElement(By.cssSelector("[value=Search]")).click();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
+        assertTrue(testResult, "Search doesn't work");
+        driver.close();
+    }
 }

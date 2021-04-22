@@ -1,4 +1,4 @@
-package chrome.login;
+package chrome;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +11,9 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-
-public class TestLogIn {
+public class TestGreetingMassage {
     @Test
-    public void logInShouldAcceptDataFromRegistration() {
+    public void greetingMassageOnMainPage() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -39,44 +38,54 @@ public class TestLogIn {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        char ch = '_';
+        int name = email.indexOf(String.valueOf(ch));
+        String nameUser= email.substring(0, name);
+        String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
+        boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
+        assertTrue(rightGreeting,"Greeting Is not correct");
+        driver.close();
+    }
+    @Test
+    public void greetingMassageOnBookPage() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver(options);
+        driver.get("https://www.sharelane.com/cgi-bin/register.py");
+        driver.findElement(By.name("zip_code")).sendKeys("12345");
+        driver.findElement(By.cssSelector("[value=Continue]")).click();
+        driver.findElement(By.name("first_name")).sendKeys("Sam");
+        driver.findElement(By.name("last_name")).sendKeys("Obama");
+        driver.findElement(By.name("email")).sendKeys("kostya@gmail.com");
+        driver.findElement(By.name("password1")).sendKeys("12345");
+        driver.findElement(By.name("password2")).sendKeys("12345");
+        driver.findElement(By.cssSelector("[value=Register]")).click();
+        String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
+        assertEquals(accountCreated, "Account is created!", "Account doesn't created");
+        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
+                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
+        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
+                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
+        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
+                "tr:nth-child(2) > td > p > a")).click();
+        driver.findElement(By.name("email")).sendKeys(email);
+        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.cssSelector("[value=Login]")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
+        char ch = '_';
+        int name = email.indexOf(String.valueOf(ch));
+        String nameUser= email.substring(0, name);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        boolean confirmLog = driver.findElement(By.cssSelector("[href=\"./log_out.py\"]")).isDisplayed();
-        assertTrue(confirmLog, "https://www.sharelane.com/cgi-bin/main.py");
+        String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
+        boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
+        assertTrue(rightGreeting,"Greeting is not correct");
         driver.close();
     }
-
     @Test
-    public void inLoginEmailShouldBeRequired() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver(options);
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
-        driver.findElement(By.name("zip_code")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Continue]")).click();
-        driver.findElement(By.name("first_name")).sendKeys("Sam");
-        driver.findElement(By.name("last_name")).sendKeys("Obama");
-        driver.findElement(By.name("email")).sendKeys("kostya@gmail.com");
-        driver.findElement(By.name("password1")).sendKeys("12345");
-        driver.findElement(By.name("password2")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Register]")).click();
-        String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
-        assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
-        driver.findElement(By.name("email")).sendKeys("");
-        driver.findElement(By.name("password")).sendKeys(password);
-        driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Email" +
-                " can be missed");
-        driver.close();
-    }
-
-    @Test
-    public void inLoginPasswordShouldBeRequired() {
+    public void greetingMassageInShoppingCart() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -94,49 +103,26 @@ public class TestLogIn {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
                 "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
+        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
+                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
         driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
                 "tr:nth-child(2) > td > p > a")).click();
         driver.findElement(By.name("email")).sendKeys(email);
-        driver.findElement(By.name("password")).sendKeys("");
-        driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Password" +
-                " can be missed");
-        driver.close();
-    }
-
-    @Test
-    public void inLoginEmailShouldBeRegisteredInSystem() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver(options);
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
-        driver.findElement(By.name("zip_code")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Continue]")).click();
-        driver.findElement(By.name("first_name")).sendKeys("Sam");
-        driver.findElement(By.name("last_name")).sendKeys("Obama");
-        driver.findElement(By.name("email")).sendKeys("kostya@gmail.com");
-        driver.findElement(By.name("password1")).sendKeys("12345");
-        driver.findElement(By.name("password2")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Register]")).click();
-        String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
-        assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
-        driver.findElement(By.name("email")).sendKeys("obama@gmail.com");
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Can be used" +
-                " Email that are not registered in system");
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
+        char ch = '_';
+        int name = email.indexOf(String.valueOf(ch));
+        String nameUser= email.substring(0, name);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
+        boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
+        assertTrue(rightGreeting,"Greeting is not correct");
         driver.close();
     }
-
     @Test
-    public void inLoginForEmailCanNotBeUsedWrongPassword() {
+    public void greetingMassageAfterSearch() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -154,74 +140,23 @@ public class TestLogIn {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
                 "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
+        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
+                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
         driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
                 "tr:nth-child(2) > td > p > a")).click();
         driver.findElement(By.name("email")).sendKeys(email);
-        driver.findElement(By.name("password")).sendKeys("1234");
+        driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Can be used" +
-                " Password that doesn't  match Password attached to the Email  in system");
-        driver.close();
-    }
-
-    @Test
-    public void canNotLogInWithEmailAndPasswordThatAreNotRegisteredInSystem() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver(options);
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
-        driver.findElement(By.name("zip_code")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Continue]")).click();
-        driver.findElement(By.name("first_name")).sendKeys("Sam");
-        driver.findElement(By.name("last_name")).sendKeys("Obama");
-        driver.findElement(By.name("email")).sendKeys("kostya@gmail.com");
-        driver.findElement(By.name("password1")).sendKeys("12345");
-        driver.findElement(By.name("password2")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Register]")).click();
-        String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
-        assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
-        driver.findElement(By.name("email")).sendKeys("Obama@gmail.com");
-        driver.findElement(By.name("password")).sendKeys("1234");
-        driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Can be used" +
-                " Email and Password that are not registered in system");
-        driver.close();
-    }
-
-    @Test
-    public void logInShouldNotAcceptEmailAndPasswordViceVersa() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver(options);
-        driver.get("https://www.sharelane.com/cgi-bin/register.py");
-        driver.findElement(By.name("zip_code")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Continue]")).click();
-        driver.findElement(By.name("first_name")).sendKeys("Sam");
-        driver.findElement(By.name("last_name")).sendKeys("Obama");
-        driver.findElement(By.name("email")).sendKeys("kostya@gmail.com");
-        driver.findElement(By.name("password1")).sendKeys("12345");
-        driver.findElement(By.name("password2")).sendKeys("12345");
-        driver.findElement(By.cssSelector("[value=Register]")).click();
-        String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
-        assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
-        driver.findElement(By.name("email")).sendKeys(password);
-        driver.findElement(By.name("password")).sendKeys(email);
-        driver.findElement(By.cssSelector("[value=Login]")).click();
-        String error = driver.findElement(By.cssSelector("[class=error_message]")).getText();
-        assertEquals(error, "Oops, error. Email and/or password don't match our records", "Can be used" +
-                " Email and Password that are not registered in system");
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("great expectations");
+        driver.findElement(By.cssSelector("[value=Search]")).click();
+        char ch = '_';
+        int name = email.indexOf(String.valueOf(ch));
+        String nameUser= email.substring(0, name);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
+        boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
+        assertTrue(rightGreeting,"Greeting is not correct");
         driver.close();
     }
 }
