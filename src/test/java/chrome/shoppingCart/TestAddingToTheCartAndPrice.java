@@ -18,10 +18,10 @@ public class TestAddingToTheCartAndPrice {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String error = driver.findElement(By.cssSelector("[class=\"error_message\"]")).getText();
         assertEquals(error, "Oops, error. You must log in", "Error, no need to be login");
         driver.close();
@@ -33,6 +33,7 @@ public class TestAddingToTheCartAndPrice {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -53,11 +54,8 @@ public class TestAddingToTheCartAndPrice {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String error = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).getText();
         assertEquals(error, "Book was added to the Shopping Cart", "not equal confirming massage");
         driver.close();
@@ -69,6 +67,7 @@ public class TestAddingToTheCartAndPrice {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -89,13 +88,10 @@ public class TestAddingToTheCartAndPrice {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String onMainPage = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td > " +
                 "table > tbody > tr > td:nth-child(2) > p:nth-child(1) > b")).getText();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
         String booked = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr[2]")).getText();
         boolean compareBookedAndInShoppingCart = booked.toLowerCase().contains(onMainPage.toLowerCase());
@@ -109,6 +105,7 @@ public class TestAddingToTheCartAndPrice {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -129,23 +126,17 @@ public class TestAddingToTheCartAndPrice {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/t" +
                 "d/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String onMainPageFirstBook = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > " +
                 "td > table > tbody > tr > td:nth-child(2) > p:nth-child(1) > b")).getText();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[1]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/" +
                 "a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String onMainPageSecondBook = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > " +
                 "td > table > tbody > tr > td:nth-child(2) > p:nth-child(1) > b")).getText();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
 
         String booked = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr[2]")).getText();
@@ -161,6 +152,7 @@ public class TestAddingToTheCartAndPrice {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -181,13 +173,10 @@ public class TestAddingToTheCartAndPrice {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String priceOnBookPage = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td >" +
                 " table > tbody > tr > td:nth-child(2) > p:nth-child(3) > b > font")).getText();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[2]/p[2]/a")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
         String priceInCart = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr[2]/td[4]")).getText();
         boolean compareBookedAndInShoppingCart = priceOnBookPage.toLowerCase().contains(priceInCart.toLowerCase());

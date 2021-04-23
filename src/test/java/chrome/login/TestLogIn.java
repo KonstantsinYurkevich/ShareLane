@@ -19,6 +19,7 @@ public class TestLogIn {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -39,7 +40,6 @@ public class TestLogIn {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean confirmLog = driver.findElement(By.cssSelector("[href=\"./log_out.py\"]")).isDisplayed();
         assertTrue(confirmLog, "https://www.sharelane.com/cgi-bin/main.py");
         driver.close();

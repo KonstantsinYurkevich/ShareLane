@@ -18,6 +18,7 @@ public class TestGreetingMassage {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -38,7 +39,6 @@ public class TestGreetingMassage {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         char ch = '_';
         int name = email.indexOf(String.valueOf(ch));
         String nameUser= email.substring(0, name);
@@ -53,6 +53,7 @@ public class TestGreetingMassage {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -73,12 +74,10 @@ public class TestGreetingMassage {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[5]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/a")).click();
         char ch = '_';
         int name = email.indexOf(String.valueOf(ch));
         String nameUser= email.substring(0, name);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
         boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
         assertTrue(rightGreeting,"Greeting is not correct");
@@ -90,6 +89,7 @@ public class TestGreetingMassage {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -110,12 +110,10 @@ public class TestGreetingMassage {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
         char ch = '_';
         int name = email.indexOf(String.valueOf(ch));
         String nameUser= email.substring(0, name);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
         boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
         assertTrue(rightGreeting,"Greeting is not correct");
@@ -127,6 +125,7 @@ public class TestGreetingMassage {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[value=Continue]")).click();
@@ -147,13 +146,11 @@ public class TestGreetingMassage {
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("great expectations");
         driver.findElement(By.cssSelector("[value=Search]")).click();
         char ch = '_';
         int name = email.indexOf(String.valueOf(ch));
         String nameUser= email.substring(0, name);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         String greeting = driver.findElement(By.cssSelector("[class=user]")).getText();
         boolean rightGreeting = greeting.toLowerCase().contains(nameUser);
         assertTrue(rightGreeting,"Greeting is not correct");

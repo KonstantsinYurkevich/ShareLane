@@ -17,10 +17,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("mark twain");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -34,10 +34,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("MARK TWAIN");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -51,10 +51,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("marktwain");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
@@ -66,10 +66,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("mark");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -83,10 +83,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("MARK");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -100,10 +100,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("MaRk");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -117,10 +117,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("Mark");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -134,10 +134,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("  Mark  ");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -151,10 +151,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys(" M a r k ");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
@@ -166,10 +166,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("M@ark@!#");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
@@ -181,10 +181,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("twain");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -198,10 +198,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("TWAIN");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -215,10 +215,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("TwAiN");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -232,10 +232,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("Twain");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -252,7 +252,7 @@ public class TestSearchAuthorNameAndSurname {
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("  Twain  ");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(5) > td " +
                 "> table:nth-child(1)")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
@@ -266,11 +266,11 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.name("zip_code")).sendKeys("12345");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys(" T w a i n ");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
@@ -282,10 +282,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("#@!Tw@ain#");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
@@ -296,10 +296,10 @@ public class TestSearchAuthorNameAndSurname {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
         driver.get("https://www.sharelane.com/cgi-bin/main.py");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("Tolstoy");
         driver.findElement(By.cssSelector("[value=Search]")).click();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         boolean testResult = driver.findElement(By.cssSelector("[class=\"confirmation_message\"]")).isDisplayed();
         assertTrue(testResult, "Search doesn't work");
         driver.close();
