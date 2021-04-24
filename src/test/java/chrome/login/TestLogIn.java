@@ -31,12 +31,9 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
+        String password = driver.findElement(By.xpath("(//td)[17]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -62,10 +59,8 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String password = driver.findElement(By.xpath("(//td)[17]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys("");
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -92,10 +87,8 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys("");
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -122,10 +115,8 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String password = driver.findElement(By.xpath("(//td)[17]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys("obama@gmail.com");
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -152,10 +143,8 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys("1234");
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -182,8 +171,7 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys("Obama@gmail.com");
         driver.findElement(By.name("password")).sendKeys("1234");
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -210,12 +198,9 @@ public class TestLogIn {
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String accountCreated = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
-        String email = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > b")).getText();
-        String password = driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > " +
-                "table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(2) > td:nth-child(2)")).getText();
-        driver.findElement(By.cssSelector("body > center > table > tbody > tr:nth-child(6) > td > table > tbody > " +
-                "tr:nth-child(2) > td > p > a")).click();
+        String email = driver.findElement(By.xpath("(//b)[2]")).getText();
+        String password = driver.findElement(By.xpath("(//td)[17]")).getText();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(password);
         driver.findElement(By.name("password")).sendKeys(email);
         driver.findElement(By.cssSelector("[value=Login]")).click();

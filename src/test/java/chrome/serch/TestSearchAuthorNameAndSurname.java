@@ -290,6 +290,7 @@ public class TestSearchAuthorNameAndSurname {
         assertTrue(testResult, "Search doesn't work");
         driver.close();
     }
+
     @Test
     public void searchShouldNotAcceptByAuthorThatDoesNotExistInData() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");

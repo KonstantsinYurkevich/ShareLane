@@ -44,6 +44,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("great expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldAcceptBookNameCamelCase() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -60,6 +61,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("great expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldAcceptBookNameIfItContainWthMoreThanOneWordViceVersa() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -76,6 +78,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("great expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldAcceptOneWordFromBookName() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -92,6 +95,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldNotAcceptBookNameWithDigits() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -106,6 +110,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(testResult, "Search doesn't work");
         driver.close();
     }
+
     @Test
     public void searchShouldNotAcceptBookNameWithDSymbols() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -120,6 +125,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(testResult, "Search doesn't work");
         driver.close();
     }
+
     @Test
     public void searchShouldAcceptWithSymbolsInTheEnd() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -136,6 +142,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldAcceptWithSymbolsInTheBeginning() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -152,6 +159,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(driver.getPageSource().toLowerCase().contains("expectations"), "Search result doesn't work correct");
         driver.close();
     }
+
     @Test
     public void searchShouldNotAcceptWithSpaceInEachLetter() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -166,6 +174,7 @@ public class TestSearchNameOfTheBook {
         assertTrue(testResult, "Search doesn't work");
         driver.close();
     }
+
     @Test
     public void searchShouldNotAcceptWithCyrillicLetters() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
