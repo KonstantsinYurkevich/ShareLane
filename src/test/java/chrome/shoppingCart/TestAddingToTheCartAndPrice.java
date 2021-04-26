@@ -167,6 +167,7 @@ public class TestAddingToTheCartAndPrice {
         assertTrue(compareBookedAndInShoppingCart, "Book that add to cart and book in cart are different");
         driver.close();
     }
+
     @Test
     public void priceOfTheBooksShouldBe1000CentsConvertedTooDollars() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");

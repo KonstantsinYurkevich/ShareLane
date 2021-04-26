@@ -38,10 +38,11 @@ public class TestCalculationOfDiscountInValue {
         driver.findElement(By.xpath("//a[contains(@href, 'show_book')]")).click();
         driver.findElement(By.xpath("//a[contains(@href, 'add_to_cart')]")).click();
         driver.findElement(By.xpath("/html/body/center/table/tbody/tr[1]/td/table/tbody/tr/td[3]/a")).click();
-        String discountPercent= driver.findElement(By.xpath("((//tr)[8]//td)[6]")).getText();
-        assertEquals(discountPercent,"0.0","Wrong value of discount");
+        String discountPercent = driver.findElement(By.xpath("((//tr)[8]//td)[6]")).getText();
+        assertEquals(discountPercent, "0.0", "Wrong value of discount");
         driver.close();
     }
+
     @Test
     public void valueOfDiscountFor50BookShouldBe3() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -72,10 +73,11 @@ public class TestCalculationOfDiscountInValue {
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).clear();
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).sendKeys("50");
         driver.findElement(By.xpath("((//tr)[10]//td)[1]/input")).click();
-        String discountPercent= driver.findElement(By.xpath("((//tr)[9]//td)[6]")).getText();
-        assertEquals(discountPercent,"1500.0","Wrong value of discount");
+        String discountPercent = driver.findElement(By.xpath("((//tr)[9]//td)[6]")).getText();
+        assertEquals(discountPercent, "15.0", "Wrong value of discount");
         driver.close();
     }
+
     @Test
     public void valueOfDiscountFor150BookShouldBe3() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -106,8 +108,8 @@ public class TestCalculationOfDiscountInValue {
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).clear();
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).sendKeys("150");
         driver.findElement(By.xpath("((//tr)[10]//td)[1]/input")).click();
-        String discountPercent= driver.findElement(By.xpath("((//tr)[9]//td)[6]")).getText();
-        assertEquals(discountPercent,"6000.0","Wrong value of discount");
+        String discountPercent = driver.findElement(By.xpath("((//tr)[9]//td)[6]")).getText();
+        assertEquals(discountPercent, "60.0", "Wrong value of discount");
         driver.close();
     }
 }

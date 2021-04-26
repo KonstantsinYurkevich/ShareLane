@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
 
 public class TestHomeTask {
     @Test
-    public void testHomeTask(){
+    public void testHomeTask() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -39,7 +40,7 @@ public class TestHomeTask {
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).sendKeys("10");
         driver.findElement(By.xpath("((//tr)[10]//td)[1]/input")).click();
         String totalPriceReal = driver.findElement(By.xpath("((//tr)[9]//td)[7]")).getText();
-        assertEquals(totalPriceReal, "10000.00", "Wrong calculation of total price");
+        assertEquals(totalPriceReal, "93.00", "Wrong calculation of total price");
         driver.close();
     }
 }

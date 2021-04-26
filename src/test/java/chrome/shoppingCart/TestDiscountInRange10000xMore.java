@@ -41,10 +41,11 @@ public class TestDiscountInRange10000xMore {
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).clear();
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).sendKeys("10000");
         driver.findElement(By.xpath("((//tr)[10]//td)[1]/input")).click();
-        String discountPercent= driver.findElement(By.xpath("((//tr)[9]//td)[5]")).getText();
-        assertEquals(discountPercent,"8","Wrong value of discount");
+        String discountPercent = driver.findElement(By.xpath("((//tr)[9]//td)[5]")).getText();
+        assertEquals(discountPercent, "8", "Wrong value of discount");
         driver.close();
     }
+
     @Test
     public void rightValueOfDiscountInRangeFrom10000AndMoreShouldBe8PercentDiscountValue10000000() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
@@ -75,8 +76,8 @@ public class TestDiscountInRange10000xMore {
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).clear();
         driver.findElement(By.xpath("((//tr)[8]//td)[3]/input")).sendKeys("10000000");
         driver.findElement(By.xpath("((//tr)[10]//td)[1]/input")).click();
-        String discountPercent= driver.findElement(By.xpath("((//tr)[9]//td)[5]")).getText();
-        assertEquals(discountPercent,"8","Wrong value of discount");
+        String discountPercent = driver.findElement(By.xpath("((//tr)[9]//td)[5]")).getText();
+        assertEquals(discountPercent, "8", "Wrong value of discount");
         driver.close();
     }
 }

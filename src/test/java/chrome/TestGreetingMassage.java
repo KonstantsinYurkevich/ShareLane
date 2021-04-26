@@ -32,7 +32,7 @@ public class TestGreetingMassage {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.xpath("(//b)[2]")).getText();
         String password = driver.findElement(By.xpath("(//td)[17]")).getText();
-         driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -65,7 +65,7 @@ public class TestGreetingMassage {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.xpath("(//b)[2]")).getText();
         String password = driver.findElement(By.xpath("(//td)[17]")).getText();
-         driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -99,7 +99,7 @@ public class TestGreetingMassage {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.xpath("(//b)[2]")).getText();
         String password = driver.findElement(By.xpath("(//td)[17]")).getText();
-         driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
@@ -133,7 +133,7 @@ public class TestGreetingMassage {
         assertEquals(accountCreated, "Account is created!", "Account doesn't created");
         String email = driver.findElement(By.xpath("(//b)[2]")).getText();
         String password = driver.findElement(By.xpath("(//td)[17]")).getText();
-         driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
+        driver.findElement(By.xpath("//a[contains(@href, 'main')]")).click();
         driver.findElement(By.name("email")).sendKeys(email);
         driver.findElement(By.name("password")).sendKeys(password);
         driver.findElement(By.cssSelector("[value=Login]")).click();
